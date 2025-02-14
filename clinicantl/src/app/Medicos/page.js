@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 const urlPadrao = "https://api-clinica-2a.onrender.com";
 import styles from "./medicos.module.css";
 
-export default function Medicos() {
+export default function medicos() {
     const [medicos, setMedicos] = useState([]);
     const [medicosPorNome, setMedicosPorNome] = useState([]);
     const [showListaDePesquisa, setShowListaDePesquisa] = useState(false);
