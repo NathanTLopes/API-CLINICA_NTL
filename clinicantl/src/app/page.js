@@ -1,8 +1,5 @@
 import React from "react";
-import Link from 'next/link';
-import Image from 'next/image';
 import styles from "./page.module.css";
-import Banner from "../components/Banner";
 export const metadata = {
   title: "Clinica NTL",
   description: "Clinica Médica",
@@ -14,21 +11,14 @@ const Home = () => {
 
   return (
     <main className={styles.main}>
-      <Banner>
-        <div className={styles.bannerContent}>
-          <h2>BEM VINDO À CLÍNICA NTL!</h2>
-          <div className={styles.textbutton}>
-            <p>
-              Nossa equipe de profissionais altamente qualificados<br/> está pronta para cuidar da sua saúde com dedicação e<br/> excelência.
-              Oferecemos um atendimento humanizado,<br/> tecnologia de ponta e uma ampla gama de<br/> especialidades médicas para garantir seu bem-estar.
-            </p>
-            <button className={styles.button}>Agende Consulta</button>
+      <div className={styles.container}>
+        <div className={styles.glass}>
+          <div className={styles.desing}>
+            <h2 className={styles.titulo}>Bem-vindo à CLINICA NTL</h2>
+            <p className={styles.paragrafo}>Nossa equipe de profissionais altamente qualificados está pronta para cuidar da sua saúde com dedicação e excelência. Oferecemos um atendimento humanizado, tecnologia de ponta e uma ampla gama de especialidades médicas para garantir seu bem-estar 👨‍⚕️👩‍⚕️💊.</p>
           </div>
-          
         </div>
-      </Banner>
-
-      
+      </div>
     </main>
   );
 };

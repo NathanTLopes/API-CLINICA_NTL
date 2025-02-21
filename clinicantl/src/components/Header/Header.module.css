@@ -5,14 +5,25 @@
     background: #f4f0ef;
     padding: 10px 20px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  }
-  
-  .logo {
+    position: relative;
+}
+
+/* Estilos para o logo */
+.logo {
     display: flex;
     align-items: center;
-  }
-  
-  .nav ul {
+}
+
+/* Ocultando botão de menu padrão */
+.menuButton {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilos da navegação */
+.nav ul {
     display: flex;
     list-style: none;
     gap: 100px;
@@ -26,13 +37,12 @@
     font-weight: normal;
 }
 
-/* Estilizando os itens do menu */
+/* Estilos do submenu */
 .menuitem {
     position: relative;
     cursor: pointer;
 }
 
-/* Estilos do Submenu */
 .submenu {
     position: absolute;
     top: 100%;
@@ -48,6 +58,7 @@
     opacity: 0;
     transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
     transform: translateY(-10px);
+    z-index: 1;
 }
 
 .menuitem:hover .submenu {
@@ -67,4 +78,37 @@
     font-weight: normal;
     display: block;
     transition: color 0.3s;
+}
+
+/* Responsividade - Estilos para telas menores que 400px */
+@media (max-width: 900px) {
+    .nav {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #f4f0ef;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        flex-direction: column;
+        padding: 10px 0;
+        display: none;
+    }
+
+    .navActive {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        margin: 0;
+    }
+
+    .menuButton {
+        display: block;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
 }

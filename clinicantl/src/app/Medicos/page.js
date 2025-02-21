@@ -40,49 +40,51 @@ export default function medicos() {
     }, []);
 
     return (
-        <div className={styles.container}>
-            <h2 className={styles.tituloh1}>Lista de Médicos</h2>
-            <div className={styles.containerPesquisa}>
-                <button className={styles.botaoPesquisar} onClick={() => { setShowListaDePesquisa(!showListaDePesquisa); }}>Buscar médico</button>
-                {showListaDePesquisa && (
-                    <>
-                        <div className={styles.fundoPopUp} onClick={() => setShowListaDePesquisa(false)}></div>
-                        <div className={styles.containerListaPesquisa}>
-                            <div className={styles.containerInput}>
-                                <input type="text" onChange={(e) => pesquisarMedicoPorNome(e.target.value)} placeholder="Pesquisar médico" className={styles.input} onInput={(e) => e.target.value = e.target.value.replace(/['"]/g, '')} />
+        <div className={styles.imagem}>
+            <div className={styles.container}>
+                <h2 className={styles.tituloh1}>Lista de Médicos</h2>
+                <div className={styles.containerPesquisa}>
+                    <button className={styles.botaoPesquisar} onClick={() => { setShowListaDePesquisa(!showListaDePesquisa); }}>Buscar médico</button>
+                    {showListaDePesquisa && (
+                        <>
+                            <div className={styles.fundoPopUp} onClick={() => setShowListaDePesquisa(false)}></div>
+                            <div className={styles.containerListaPesquisa}>
+                                <div className={styles.containerInput}>
+                                    <input type="text" onChange={(e) => pesquisarMedicoPorNome(e.target.value)} placeholder="Pesquisar médico" className={styles.input} onInput={(e) => e.target.value = e.target.value.replace(/['"]/g, '')} />
+                                </div>
+                                <ul className={styles.listaPesquisa}>
+                                    {medicosPorNome.map((medico) => (
+                                        <li className={styles.linhaListaPesquisa} key={medico.id}>{medico.nome}</li>
+                                    ))}
+                                </ul>
                             </div>
-                            <ul className={styles.listaPesquisa}>
-                                {medicosPorNome.map((medico) => (
-                                    <li className={styles.linhaListaPesquisa} key={medico.id}>{medico.nome}</li>
-                                ))}
-                            </ul>
-                        </div>
-                    </>
-                )}
-            </div>
-            <div className={styles.tabelaContainer}>
-                <table className={styles.tabela}>
-                    <thead className={styles.cabecalho}>
-                        <tr className={styles.linhaCabecalho}>
-                            <th>ID</th>
-                            <th>NOME</th>
-                            <th>TELEFONE</th>
-                            <th>EMAIL</th>
-                            <th>ESPECIALIZADOS</th>
-                        </tr>
-                    </thead>
-                    <tbody className={styles.corpoTabela}>
-                        {medicos.map((medico) => (
-                            <tr className={styles.linhaCorpo} key={medico.id}>
-                                <td>{medico.id}</td>
-                                <td>{medico.nome}</td>
-                                <td>{medico.telefone}</td>
-                                <td>{medico.email}</td>
-                                <td>{medico.especialidade}</td>
+                        </>
+                    )}
+                </div>
+                <div className={styles.tabelaContainer}>
+                    <table className={styles.tabela}>
+                        <thead className={styles.cabecalho}>
+                            <tr className={styles.linhaCabecalho}>
+                                <th>ID</th>
+                                <th>NOME</th>
+                                <th>TELEFONE</th>
+                                <th>EMAIL</th>
+                                <th>ESPECIALIZADOS</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody className={styles.corpoTabela}>
+                            {medicos.map((medico) => (
+                                <tr className={styles.linhaCorpo} key={medico.id}>
+                                    <td>{medico.id}</td>
+                                    <td>{medico.nome}</td>
+                                    <td>{medico.telefone}</td>
+                                    <td>{medico.email}</td>
+                                    <td>{medico.especialidade}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     );

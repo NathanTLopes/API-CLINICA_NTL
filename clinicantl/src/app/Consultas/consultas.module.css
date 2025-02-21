@@ -1,3 +1,15 @@
+.imagem {
+    flex-grow: 1;
+    background-image: url('/images/pexels-joyston-judah-331625-933054.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+}
 .container {
     background-color: #2e2e2e;
     width: 90%;
